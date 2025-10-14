@@ -37,8 +37,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    loader = document.createElement("p");
+    loader = document.createElement("span");
     loader.innerText = "Loading images, please wait...";
+    loader.classList.add("loader");
     gallery.prepend(loader);
 }
 
