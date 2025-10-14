@@ -2,6 +2,7 @@ import {getImagesByQuery} from "./js/pixabay-api.js";
 import {createGallery} from "./js/render-functions.js";
 import {clearGallery, showLoader, hideLoader} from "./js/render-functions.js";
 
+
 let form = document.querySelector(".form");
 
 form.addEventListener("submit", event => {
@@ -15,6 +16,9 @@ form.addEventListener("submit", event => {
     .then(data => {
         hideLoader();
         createGallery(data.hits);
+    })
+    .finally(() => {
+        hideLoader();
     });
     
     form.reset();

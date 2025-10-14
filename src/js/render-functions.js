@@ -37,13 +37,12 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    loader = document.createElement("span");
-    loader.innerText = "Loading images, please wait...";
-    loader.classList.add("loader");
-    gallery.prepend(loader);
+    loader = document.querySelector(".loader");
+    if (loader) loader.style.display = "block";
 }
 
 export function hideLoader() {
-    loader.remove();
+    loader = document.querySelector(".loader");
+    if (loader) loader.style.display = "none";
 }
 

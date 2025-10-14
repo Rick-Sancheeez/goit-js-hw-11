@@ -49,3 +49,10 @@
     letter-spacing: 4%;
 
 }
+
+.loader {
+    display: none;
+    text-align: center;
+    font-size: 16px;
+    margin: 16px 0;
+}
