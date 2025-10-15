@@ -31,7 +31,7 @@
     margin-right: 32px;
 }
 
-.gallery ul.image-description li p:first-child {
+.gallery ul.image-description li span:first-child {
     font-family: 'Montserrat';
     font-weight: 600;
     font-style: SemiBold;
@@ -40,7 +40,7 @@
     letter-spacing: 4%;
 }
 
-.gallery ul.image-description li p:nth-child(2) {
+.gallery ul.image-description li span:nth-child(2) {
     font-family: Montserrat, sans-serif;
     font-weight: 400;
     font-style: Regular;
@@ -48,6 +48,7 @@
     line-height: 24px;
     letter-spacing: 4%;
 
+    display: block;
 }
 
 .loader {

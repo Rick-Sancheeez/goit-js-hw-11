@@ -4,22 +4,29 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 let lightbox;
-let loader;
+let loader = document.querySelector(".loader");
 const gallery = document.querySelector('.gallery');
 
 export function createGallery(images) {
 
     let markUp = images.map(image => { 
         return `<li>
-            <a href="${image.largeImageURL}">
-                <img src="${image.webformatURL}" alt="${image.tags}" />
-            </a>
-            <ul class="image-description">
-                <li><p>Likes</p><p>${image.likes}</p></li>
-                <li><p>Viewes</p><p>${image.views}</p></li>
-                <li><p>Comments</p><p>${image.comments}</p> </li>
-                <li><p>Downloads</p><p>${image.downloads}</p> </li>
-            </ul>
+
+            <div class="container-image">
+                <a href="${image.largeImageURL}">
+                    <img src="${image.webformatURL}" alt="${image.tags}" />
+                </a>
+            </div>
+
+            <div class="container-description">
+                <ul class="image-description">
+                    <li> <span>Likes</span> <span>${image.likes}</span> </li>
+                    <li> <span>Views</span> <span>${image.views}</span> </li>
+                    <li> <span>Comments</span> <span>${image.comments}</span> </li>
+                    <li><span>Downloads</span> <span>${image.downloads}</span> </li>
+                </ul>
+            </div>
+
         </li>`;
     }).join("");
 
@@ -37,12 +44,10 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    loader = document.querySelector(".loader");
     if (loader) loader.style.display = "block";
 }
 
 export function hideLoader() {
-    loader = document.querySelector(".loader");
     if (loader) loader.style.display = "none";
 }
 
